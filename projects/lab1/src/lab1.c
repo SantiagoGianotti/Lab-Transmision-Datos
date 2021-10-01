@@ -3,6 +3,7 @@
 #include "configuracion.h"
 #include "led.h"
 #include <string.h>
+#include <stdio.h>
 
 #define USB_UART LPC_USART2
 #define OVERRUN "ERROR OVERRUN\r\n"
@@ -13,7 +14,7 @@
 
 static uint8_t actualizar = 0;
 
-uint8_t translateError(uint8_t status);
+const char* translateError(uint8_t status);
 
 void handleError(uint8_t error);
 
@@ -84,8 +85,14 @@ uint8_t UARTLeerByte(LPC_USART_T *pUART, uint8_t *data, uint8_t *error)
 	//Primero verifico si existe algun error
 	if( status & UART_LSR_RXFE)
 	{
-		//Veo a que error corresponde y lo traduzco
-		*error = translateError(status);
+		//Devuelvo el estado del lsr asi lo analizo en otro lugar
+		//con una mascara me encargo de solo pasar la información de los errores.
+		*error = status & (
+			UART_LSR_OE
+			| UART_LSR_PE
+			| UART_LSR_FE
+			| UART_LSR_BI
+		);
 
 		//Devuelvo 2 indicando que hay error.
 		return 2;
@@ -108,7 +115,10 @@ int main(void)
 {
 	uint8_t data;
 	uint8_t error;
-	int8_t contador_display = 0; //inicializo el contador del display
+
+	//inicializo el contador del display como int con signo asi
+	//programar el contador es mas sencillo.
+	int8_t contador_display = 0;
 
 	ConfigurarPuertosLaboratorio();
 	ConfigurarInterrupcion();
@@ -148,14 +158,38 @@ int main(void)
 /**
  * Este metodo se encarga de enumerar el tipo de error encontrado.
  * de momento no hace nada ya que no hacemos nada con los errores en el lab.
+ * NOTA: solo muestra un tipo de error a la vez, ya que es improbable que se de mas de uno.
  * @param error - Registro LSR con estado de error.
  * @return uint8_t
  **/
-uint8_t translateError(uint8_t error)
+const char* translateError(uint8_t error)
 {
-	return 0;
-}
+	//Si es error de overrun
+	if (error & UART_LSR_OE)
+	{
+		return OVERRUN;
+	}
 
+	//Si es error de paridad
+	if (error & UART_LSR_PE)
+	{
+		return PARITY;
+	}
+
+	//Si es error de framing
+	if (error & UART_LSR_FE)
+	{
+		return FRAMING;
+	}
+
+	//Si es error de breack
+	if (error & UART_LSR_BI)
+	{
+		return BREAK;
+	}
+
+	return UNKNOWN;
+}
 
 /**
  * Manejo de error
@@ -163,7 +197,8 @@ uint8_t translateError(uint8_t error)
  **/
 void handleError(uint8_t error)
 {
-	//no hacemos nada con el error de momento
+	//Printeo el error ya que no se definio ninguna conducta.
+	printf("%s", translateError(error));
 }
 
 /**
