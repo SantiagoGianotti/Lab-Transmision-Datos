@@ -20,6 +20,8 @@ void handleError(uint8_t error);
 
 void handleData(uint8_t data, int8_t *contador);
 
+void sendByte(LPC_USART_T *pUART, int8_t info);
+
 void SysTick_Handler(void)
 {
 	static int contador = 0;
@@ -42,7 +44,7 @@ void ConfigurarUART(LPC_USART_T *pUART)
 
 	//Habilito la escritura del registro DLM y DLL
 	//Utilizo una mascara para escribir en el bit 7
-	pUART->LCR = pUART->LCR | UART_LCR_DLAB_EN;
+	pUART->LCR |= UART_LCR_DLAB_EN;
 
 	//El Para obtener 9600bps uso el valor 1328 = 0x530
 	//Configuro DLM y DLL
@@ -50,22 +52,23 @@ void ConfigurarUART(LPC_USART_T *pUART)
 	pUART->DLL = 0x30;
 
 	//Borro todos los valores a configurar en bits 7 al 0
-	pUART->LCR = pUART->LCR & 0xFFFFFF00;
+	pUART->LCR &= 0xFFFFFF00;
 
 	//Configuro los valores
-	pUART->LCR = pUART->LCR
-		| UART_LCR_PARITY_EN	//habilito paridad
+	pUART->LCR |= 
+		UART_LCR_PARITY_EN	//habilito paridad
 		| UART_LCR_PARITY_EVEN	//paridad par
 		| UART_LCR_WLEN8		//8 bits de palabra
 		| UART_LCR_SBS_1BIT;	//1 bit de stop
 
-	pUART->TER1 = pUART->TER1 | 0b1;
+	pUART->TER2 = UART_TER2_TXEN;
 
 }
 
 uint8_t UARTDisponible(LPC_USART_T *pUART)
 {
-	/*  COMPLETAR LA IMPLEMENTACION DE ESTA FUNCION  */
+	//Reviso que el THRE este vacio y listo para enviar.
+	return pUART->LSR & UART_LSR_THRE;
 }
 
 /**
@@ -129,9 +132,13 @@ int main(void)
 		if (actualizar)
 		{
 			actualizar = 0;
+
 			Led_On(GREEN_LED);
 
-			/*  ESCRIBIR IMPLEMENTACION UARTDISPONIBLE Y ENVIAR LA CUENTA ACTUAL  */
+			if(UARTDisponible(USB_UART))
+			{
+				sendByte(USB_UART,contador_display);
+			}
 
 			Led_Off(GREEN_LED);
 		}
@@ -234,4 +241,10 @@ void handleData(uint8_t data, int8_t *contador)
 	{
 		*contador = 99;
 	}
+}
+
+void sendByte(LPC_USART_T *pUART, int8_t info)
+{
+	//hago un cast al byte para que se envie sin signo.
+	pUART->THR = (uint32_t) info;
 }

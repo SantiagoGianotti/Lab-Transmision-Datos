@@ -194,8 +194,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 projects/lab1/out/projects/lab1/src/lab1.o
  .data          0x0000000000000000        0x0 projects/lab1/out/projects/lab1/src/lab1.o
  .bss           0x0000000000000000        0x0 projects/lab1/out/projects/lab1/src/lab1.o
- .text.UARTDisponible
-                0x0000000000000000        0x2 projects/lab1/out/projects/lab1/src/lab1.o
  .debug_macro   0x0000000000000000      0xaba projects/lab1/out/projects/lab1/src/lab1.o
  .debug_macro   0x0000000000000000       0x22 projects/lab1/out/projects/lab1/src/lab1.o
  .debug_macro   0x0000000000000000      0x103 projects/lab1/out/projects/lab1/src/lab1.o
@@ -7631,19 +7629,19 @@ END GROUP
                 0x000000001a000114                . = ALIGN (0x4)
                 0x000000001a000114                __section_table_start = .
                 0x000000001a000114                __data_section_table = .
-                0x000000001a000114        0x4 LONG 0x1a002930 LOADADDR (.data)
+                0x000000001a000114        0x4 LONG 0x1a002950 LOADADDR (.data)
                 0x000000001a000118        0x4 LONG 0x10000000 ADDR (.data)
                 0x000000001a00011c        0x4 LONG 0x9c SIZEOF (.data)
-                0x000000001a000120        0x4 LONG 0x1a002930 LOADADDR (.data_RAM2)
+                0x000000001a000120        0x4 LONG 0x1a002950 LOADADDR (.data_RAM2)
                 0x000000001a000124        0x4 LONG 0x10080000 ADDR (.data_RAM2)
                 0x000000001a000128        0x4 LONG 0x0 SIZEOF (.data_RAM2)
-                0x000000001a00012c        0x4 LONG 0x1a002930 LOADADDR (.data_RAM3)
+                0x000000001a00012c        0x4 LONG 0x1a002950 LOADADDR (.data_RAM3)
                 0x000000001a000130        0x4 LONG 0x20000000 ADDR (.data_RAM3)
                 0x000000001a000134        0x4 LONG 0x0 SIZEOF (.data_RAM3)
-                0x000000001a000138        0x4 LONG 0x1a002930 LOADADDR (.data_RAM4)
+                0x000000001a000138        0x4 LONG 0x1a002950 LOADADDR (.data_RAM4)
                 0x000000001a00013c        0x4 LONG 0x20008000 ADDR (.data_RAM4)
                 0x000000001a000140        0x4 LONG 0x0 SIZEOF (.data_RAM4)
-                0x000000001a000144        0x4 LONG 0x1a002930 LOADADDR (.data_RAM5)
+                0x000000001a000144        0x4 LONG 0x1a002950 LOADADDR (.data_RAM5)
                 0x000000001a000148        0x4 LONG 0x2000c000 ADDR (.data_RAM5)
                 0x000000001a00014c        0x4 LONG 0x0 SIZEOF (.data_RAM5)
                 0x000000001a000150                __data_section_table_end = .
@@ -7764,7 +7762,7 @@ END GROUP
                 0x000000001a000304                PROVIDE (__init_array_end = .)
                 0x000000001a000304                . = ALIGN (0x4)
 
-.text           0x000000001a000310     0x2618
+.text           0x000000001a000310     0x2638
  *(.text*)
  .text.ConfigurarInterrupcion
                 0x000000001a000310       0x4c projects/lab1/out/projects/lab1/src/configuracion.o
@@ -7776,387 +7774,393 @@ END GROUP
                 0x000000001a0003d8       0x5c projects/lab1/out/projects/lab1/src/lab1.o
                 0x000000001a0003d8                SysTick_Handler
  .text.ConfigurarUART
-                0x000000001a000434       0x32 projects/lab1/out/projects/lab1/src/lab1.o
+                0x000000001a000434       0x2e projects/lab1/out/projects/lab1/src/lab1.o
                 0x000000001a000434                ConfigurarUART
+ .text.UARTDisponible
+                0x000000001a000462        0x8 projects/lab1/out/projects/lab1/src/lab1.o
+                0x000000001a000462                UARTDisponible
  .text.UARTLeerByte
-                0x000000001a000466       0x2a projects/lab1/out/projects/lab1/src/lab1.o
-                0x000000001a000466                UARTLeerByte
+                0x000000001a00046a       0x2a projects/lab1/out/projects/lab1/src/lab1.o
+                0x000000001a00046a                UARTLeerByte
  .text.translateError
-                0x000000001a000490       0x40 projects/lab1/out/projects/lab1/src/lab1.o
-                0x000000001a000490                translateError
+                0x000000001a000494       0x40 projects/lab1/out/projects/lab1/src/lab1.o
+                0x000000001a000494                translateError
  .text.handleError
-                0x000000001a0004d0       0x14 projects/lab1/out/projects/lab1/src/lab1.o
-                0x000000001a0004d0                handleError
+                0x000000001a0004d4       0x14 projects/lab1/out/projects/lab1/src/lab1.o
+                0x000000001a0004d4                handleError
  .text.handleData
-                0x000000001a0004e4       0x34 projects/lab1/out/projects/lab1/src/lab1.o
-                0x000000001a0004e4                handleData
- .text.main     0x000000001a000518       0x6c projects/lab1/out/projects/lab1/src/lab1.o
-                0x000000001a000518                main
+                0x000000001a0004e8       0x34 projects/lab1/out/projects/lab1/src/lab1.o
+                0x000000001a0004e8                handleData
+ .text.sendByte
+                0x000000001a00051c        0x4 projects/lab1/out/projects/lab1/src/lab1.o
+                0x000000001a00051c                sendByte
+ .text.main     0x000000001a000520       0x80 projects/lab1/out/projects/lab1/src/lab1.o
+                0x000000001a000520                main
  .text.initialise_monitor_handles
-                0x000000001a000584        0x2 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a000584                initialise_monitor_handles
- *fill*         0x000000001a000586        0x2 
+                0x000000001a0005a0        0x2 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a0005a0                initialise_monitor_handles
+ *fill*         0x000000001a0005a2        0x2 
  .text.Reset_Handler
-                0x000000001a000588       0x88 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a000588                Reset_Handler
- .text._fini    0x000000001a000610        0x2 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a000610                _fini
- .text._init    0x000000001a000612        0x2 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a000612                _init
+                0x000000001a0005a4       0x88 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a0005a4                Reset_Handler
+ .text._fini    0x000000001a00062c        0x2 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a00062c                _fini
+ .text._init    0x000000001a00062e        0x2 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a00062e                _init
  .text._close_r
-                0x000000001a000614        0xa projects/lab1/out/libs/sys_newlib//src/system.o
-                0x000000001a000614                _close_r
+                0x000000001a000630        0xa projects/lab1/out/libs/sys_newlib//src/system.o
+                0x000000001a000630                _close_r
  .text._fstat_r
-                0x000000001a00061e        0xa projects/lab1/out/libs/sys_newlib//src/system.o
-                0x000000001a00061e                _fstat_r
- .text._isatty_r
-                0x000000001a000628       0x12 projects/lab1/out/libs/sys_newlib//src/system.o
-                0x000000001a000628                _isatty_r
- .text._lseek_r
                 0x000000001a00063a        0xa projects/lab1/out/libs/sys_newlib//src/system.o
-                0x000000001a00063a                _lseek_r
- .text._read_r  0x000000001a000644       0x4e projects/lab1/out/libs/sys_newlib//src/system.o
-                0x000000001a000644                _read_r
+                0x000000001a00063a                _fstat_r
+ .text._isatty_r
+                0x000000001a000644       0x12 projects/lab1/out/libs/sys_newlib//src/system.o
+                0x000000001a000644                _isatty_r
+ .text._lseek_r
+                0x000000001a000656        0xa projects/lab1/out/libs/sys_newlib//src/system.o
+                0x000000001a000656                _lseek_r
+ .text._read_r  0x000000001a000660       0x4e projects/lab1/out/libs/sys_newlib//src/system.o
+                0x000000001a000660                _read_r
  .text._write_r
-                0x000000001a000692       0x28 projects/lab1/out/libs/sys_newlib//src/system.o
-                0x000000001a000692                _write_r
- *fill*         0x000000001a0006ba        0x2 
- .text._sbrk_r  0x000000001a0006bc       0x20 projects/lab1/out/libs/sys_newlib//src/system.o
-                0x000000001a0006bc                _sbrk_r
- .text.Led_On   0x000000001a0006dc       0x6c projects/lab1/out/modules/drivers_bm//src/led.o
-                0x000000001a0006dc                Led_On
- .text.Led_Off  0x000000001a000748       0x6c projects/lab1/out/modules/drivers_bm//src/led.o
-                0x000000001a000748                Led_Off
+                0x000000001a0006ae       0x28 projects/lab1/out/libs/sys_newlib//src/system.o
+                0x000000001a0006ae                _write_r
+ *fill*         0x000000001a0006d6        0x2 
+ .text._sbrk_r  0x000000001a0006d8       0x20 projects/lab1/out/libs/sys_newlib//src/system.o
+                0x000000001a0006d8                _sbrk_r
+ .text.Led_On   0x000000001a0006f8       0x6c projects/lab1/out/modules/drivers_bm//src/led.o
+                0x000000001a0006f8                Led_On
+ .text.Led_Off  0x000000001a000764       0x6c projects/lab1/out/modules/drivers_bm//src/led.o
+                0x000000001a000764                Led_Off
  .text.Led_Toggle
-                0x000000001a0007b4       0x6c projects/lab1/out/modules/drivers_bm//src/led.o
-                0x000000001a0007b4                Led_Toggle
+                0x000000001a0007d0       0x6c projects/lab1/out/modules/drivers_bm//src/led.o
+                0x000000001a0007d0                Led_Toggle
  .text.Board_LED_Init
-                0x000000001a000820       0x48 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a00083c       0x48 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_TEC_Init
-                0x000000001a000868       0x44 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000884       0x44 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_GPIO_Init
-                0x000000001a0008ac       0x44 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0008c8       0x44 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_ADC_Init
-                0x000000001a0008f0       0x30 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a00090c       0x30 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_SPI_Init
-                0x000000001a000920       0x38 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a00093c       0x38 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_I2C_Init
-                0x000000001a000958       0x24 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000974       0x24 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_Debug_Init
-                0x000000001a00097c       0x24 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a00097c                Board_Debug_Init
+                0x000000001a000998       0x24 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000998                Board_Debug_Init
  .text.Board_UARTPutChar
-                0x000000001a0009a0       0x14 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0009a0                Board_UARTPutChar
+                0x000000001a0009bc       0x14 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0009bc                Board_UARTPutChar
  .text.Board_UARTGetChar
-                0x000000001a0009b4       0x1c projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0009b4                Board_UARTGetChar
+                0x000000001a0009d0       0x1c projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0009d0                Board_UARTGetChar
  .text.Board_Init
-                0x000000001a0009d0       0x2c projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0009d0                Board_Init
+                0x000000001a0009ec       0x2c projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0009ec                Board_Init
  .text.__stdio_putchar
-                0x000000001a0009fc        0xa projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0009fc                __stdio_putchar
+                0x000000001a000a18        0xa projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000a18                __stdio_putchar
  .text.__stdio_getchar
-                0x000000001a000a06        0x8 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a000a06                __stdio_getchar
+                0x000000001a000a22        0x8 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000a22                __stdio_getchar
  .text.__stdio_init
-                0x000000001a000a0e        0x8 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a000a0e                __stdio_init
- *fill*         0x000000001a000a16        0x2 
+                0x000000001a000a2a        0x8 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000a2a                __stdio_init
+ *fill*         0x000000001a000a32        0x2 
  .text.Board_SetupMuxing
-                0x000000001a000a18       0x2c projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a000a18                Board_SetupMuxing
+                0x000000001a000a34       0x2c projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a000a34                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x000000001a000a44       0x6c projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a000a44                Board_SetupClocking
+                0x000000001a000a60       0x6c projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a000a60                Board_SetupClocking
  .text.Board_SystemInit
-                0x000000001a000ab0        0xc projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a000ab0                Board_SystemInit
+                0x000000001a000acc        0xc projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a000acc                Board_SystemInit
  .text.Chip_ADC_GetClockIndex
-                0x000000001a000abc       0x14 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000ad8       0x14 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .text.getClkDiv
-                0x000000001a000ad0       0x32 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- *fill*         0x000000001a000b02        0x2 
+                0x000000001a000aec       0x32 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ *fill*         0x000000001a000b1e        0x2 
  .text.Chip_ADC_Init
-                0x000000001a000b04       0x40 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000b04                Chip_ADC_Init
+                0x000000001a000b20       0x40 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000b20                Chip_ADC_Init
  .text.Chip_ADC_SetSampleRate
-                0x000000001a000b44       0x32 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000b44                Chip_ADC_SetSampleRate
+                0x000000001a000b60       0x32 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000b60                Chip_ADC_SetSampleRate
  .text.Chip_ADC_SetResolution
-                0x000000001a000b76        0xc projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000b76                Chip_ADC_SetResolution
- *fill*         0x000000001a000b82        0x2 
+                0x000000001a000b92        0xc projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000b92                Chip_ADC_SetResolution
+ *fill*         0x000000001a000b9e        0x2 
  .text.SystemCoreClockUpdate
-                0x000000001a000b84       0x14 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
-                0x000000001a000b84                SystemCoreClockUpdate
+                0x000000001a000ba0       0x14 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+                0x000000001a000ba0                SystemCoreClockUpdate
  .text.pll_calc_divs
-                0x000000001a000b98       0xa8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000bb4       0xa8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.pll_get_frac
-                0x000000001a000c40      0x110 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000c5c      0x110 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_FindBaseClock
-                0x000000001a000d50       0x54 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000d6c       0x54 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_EnableCrystal
-                0x000000001a000da4       0x4c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000da4                Chip_Clock_EnableCrystal
+                0x000000001a000dc0       0x4c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000dc0                Chip_Clock_EnableCrystal
  .text.Chip_Clock_GetDividerSource
-                0x000000001a000df0       0x1c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000df0                Chip_Clock_GetDividerSource
- .text.Chip_Clock_GetDividerDivisor
                 0x000000001a000e0c       0x1c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000e0c                Chip_Clock_GetDividerDivisor
+                0x000000001a000e0c                Chip_Clock_GetDividerSource
+ .text.Chip_Clock_GetDividerDivisor
+                0x000000001a000e28       0x1c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000e28                Chip_Clock_GetDividerDivisor
  .text.Chip_Clock_GetClockInputHz
-                0x000000001a000e28       0xb8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000e28                Chip_Clock_GetClockInputHz
+                0x000000001a000e44       0xb8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000e44                Chip_Clock_GetClockInputHz
  .text.Chip_Clock_CalcMainPLLValue
-                0x000000001a000ee0       0x80 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000ee0                Chip_Clock_CalcMainPLLValue
+                0x000000001a000efc       0x80 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000efc                Chip_Clock_CalcMainPLLValue
  .text.Chip_Clock_GetMainPLLHz
-                0x000000001a000f60       0x68 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000f60                Chip_Clock_GetMainPLLHz
+                0x000000001a000f7c       0x68 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000f7c                Chip_Clock_GetMainPLLHz
  .text.Chip_Clock_GetDivRate
-                0x000000001a000fc8       0x22 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- *fill*         0x000000001a000fea        0x2 
+                0x000000001a000fe4       0x22 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ *fill*         0x000000001a001006        0x2 
  .text.Chip_Clock_SetBaseClock
-                0x000000001a000fec       0x5c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000fec                Chip_Clock_SetBaseClock
+                0x000000001a001008       0x5c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a001008                Chip_Clock_SetBaseClock
  .text.Chip_Clock_GetBaseClock
-                0x000000001a001048       0x28 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a001048                Chip_Clock_GetBaseClock
+                0x000000001a001064       0x28 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a001064                Chip_Clock_GetBaseClock
  .text.Chip_Clock_GetBaseClocktHz
-                0x000000001a001070        0xc projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a001070                Chip_Clock_GetBaseClocktHz
+                0x000000001a00108c        0xc projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a00108c                Chip_Clock_GetBaseClocktHz
  .text.Chip_Clock_EnableOpts
-                0x000000001a00107c       0x3c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a00107c                Chip_Clock_EnableOpts
+                0x000000001a001098       0x3c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a001098                Chip_Clock_EnableOpts
  .text.Chip_Clock_Enable
-                0x000000001a0010b8       0x34 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a0010b8                Chip_Clock_Enable
+                0x000000001a0010d4       0x34 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0010d4                Chip_Clock_Enable
  .text.Chip_Clock_GetRate
-                0x000000001a0010ec       0x4c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a0010ec                Chip_Clock_GetRate
+                0x000000001a001108       0x4c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a001108                Chip_Clock_GetRate
  .text.Chip_GPIO_Init
-                0x000000001a001138        0x2 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
-                0x000000001a001138                Chip_GPIO_Init
- *fill*         0x000000001a00113a        0x2 
+                0x000000001a001154        0x2 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+                0x000000001a001154                Chip_GPIO_Init
+ *fill*         0x000000001a001156        0x2 
  .text.Chip_I2C_EventHandler
-                0x000000001a00113c       0x20 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a00113c                Chip_I2C_EventHandler
+                0x000000001a001158       0x20 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a001158                Chip_I2C_EventHandler
  .text.Chip_I2C_Init
-                0x000000001a00115c       0x28 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a00115c                Chip_I2C_Init
+                0x000000001a001178       0x28 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a001178                Chip_I2C_Init
  .text.Chip_I2C_SetClockRate
-                0x000000001a001184       0x3c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a001184                Chip_I2C_SetClockRate
+                0x000000001a0011a0       0x3c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a0011a0                Chip_I2C_SetClockRate
  .text.Chip_SSP_GetClockIndex
-                0x000000001a0011c0       0x14 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a0011dc       0x14 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_GetPeriphClockIndex
-                0x000000001a0011d4       0x18 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a0011f0       0x18 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_SetClockRate
-                0x000000001a0011ec       0x12 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a0011ec                Chip_SSP_SetClockRate
+                0x000000001a001208       0x12 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a001208                Chip_SSP_SetClockRate
  .text.Chip_SSP_SetBitRate
-                0x000000001a0011fe       0x42 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a0011fe                Chip_SSP_SetBitRate
+                0x000000001a00121a       0x42 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a00121a                Chip_SSP_SetBitRate
  .text.Chip_SSP_Init
-                0x000000001a001240       0x38 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a001240                Chip_SSP_Init
+                0x000000001a00125c       0x38 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a00125c                Chip_SSP_Init
  .text.Chip_SetupCoreClock
-                0x000000001a001278      0x158 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
-                0x000000001a001278                Chip_SetupCoreClock
+                0x000000001a001294      0x158 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x000000001a001294                Chip_SetupCoreClock
  .text.Chip_UART_GetIndex
-                0x000000001a0013d0       0x2c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a0013ec       0x2c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .text.Chip_UART_Init
-                0x000000001a0013fc       0x54 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a0013fc                Chip_UART_Init
+                0x000000001a001418       0x54 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a001418                Chip_UART_Init
  .text.Chip_UART_SetBaudFDR
-                0x000000001a001450       0xdc projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a001450                Chip_UART_SetBaudFDR
+                0x000000001a00146c       0xdc projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a00146c                Chip_UART_SetBaudFDR
  .text.SystemInit
-                0x000000001a00152c       0x38 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
-                0x000000001a00152c                SystemInit
- .text          0x000000001a001564       0x30 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
-                0x000000001a001564                __aeabi_uldivmod
+                0x000000001a001548       0x38 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
+                0x000000001a001548                SystemInit
+ .text          0x000000001a001580       0x30 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x000000001a001580                __aeabi_uldivmod
  .text.__udivmoddi4
-                0x000000001a001594      0x27a /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000001a001594                __udivmoddi4
- *fill*         0x000000001a00180e        0x2 
- .text          0x000000001a001810        0x4 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
-                0x000000001a001810                __aeabi_ldiv0
-                0x000000001a001810                __aeabi_idiv0
+                0x000000001a0015b0      0x27a /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000001a0015b0                __udivmoddi4
+ *fill*         0x000000001a00182a        0x2 
+ .text          0x000000001a00182c        0x4 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x000000001a00182c                __aeabi_ldiv0
+                0x000000001a00182c                __aeabi_idiv0
  .text.__libc_init_array
-                0x000000001a001814       0x48 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
-                0x000000001a001814                __libc_init_array
- .text.memset   0x000000001a00185c       0x10 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
-                0x000000001a00185c                memset
- .text.printf   0x000000001a00186c       0x30 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-printf.o)
-                0x000000001a00186c                printf
-                0x000000001a00186c                iprintf
- .text.std      0x000000001a00189c       0x48 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a001830       0x48 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+                0x000000001a001830                __libc_init_array
+ .text.memset   0x000000001a001878       0x10 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+                0x000000001a001878                memset
+ .text.printf   0x000000001a001888       0x30 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-printf.o)
+                0x000000001a001888                printf
+                0x000000001a001888                iprintf
+ .text.std      0x000000001a0018b8       0x48 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
  .text._cleanup_r
-                0x000000001a0018e4        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a0018e4                _cleanup_r
+                0x000000001a001900        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a001900                _cleanup_r
  .text.__sfmoreglue
-                0x000000001a0018f0       0x2c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a0018f0                __sfmoreglue
+                0x000000001a00190c       0x2c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a00190c                __sfmoreglue
  .text.__sfp_lock_acquire
-                0x000000001a00191c        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a00191c                __sfp_lock_acquire
+                0x000000001a001938        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a001938                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x000000001a001928        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a001928                __sfp_lock_release
+                0x000000001a001944        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a001944                __sfp_lock_release
  .text.__sinit_lock_acquire
-                0x000000001a001934        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a001934                __sinit_lock_acquire
+                0x000000001a001950        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a001950                __sinit_lock_acquire
  .text.__sinit_lock_release
-                0x000000001a001940        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a001940                __sinit_lock_release
- .text.__sinit  0x000000001a00194c       0x70 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a00194c                __sinit
- .text.__sfp    0x000000001a0019bc       0x8c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a0019bc                __sfp
+                0x000000001a00195c        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a00195c                __sinit_lock_release
+ .text.__sinit  0x000000001a001968       0x70 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a001968                __sinit
+ .text.__sfp    0x000000001a0019d8       0x8c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a0019d8                __sfp
  .text._fwalk_reent
-                0x000000001a001a48       0x3e /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fwalk.o)
-                0x000000001a001a48                _fwalk_reent
+                0x000000001a001a64       0x3e /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fwalk.o)
+                0x000000001a001a64                _fwalk_reent
  .text.__retarget_lock_init_recursive
-                0x000000001a001a86        0x2 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x000000001a001a86                __retarget_lock_init_recursive
+                0x000000001a001aa2        0x2 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000001a001aa2                __retarget_lock_init_recursive
  .text.__retarget_lock_acquire_recursive
-                0x000000001a001a88        0x2 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x000000001a001a88                __retarget_lock_acquire_recursive
+                0x000000001a001aa4        0x2 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000001a001aa4                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x000000001a001a8a        0x2 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x000000001a001a8a                __retarget_lock_release_recursive
+                0x000000001a001aa6        0x2 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000001a001aa6                __retarget_lock_release_recursive
  .text._malloc_r
-                0x000000001a001a8c       0xb4 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
-                0x000000001a001a8c                _malloc_r
+                0x000000001a001aa8       0xb4 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+                0x000000001a001aa8                _malloc_r
  .text.__sfputc_r
-                0x000000001a001b40       0x2e /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000001a001b5c       0x2e /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x000000001a001b6e       0x24 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x000000001a001b6e                __sfputs_r
- *fill*         0x000000001a001b92        0x2 
+                0x000000001a001b8a       0x24 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000001a001b8a                __sfputs_r
+ *fill*         0x000000001a001bae        0x2 
  .text._vfprintf_r
-                0x000000001a001b94      0x260 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x000000001a001b94                _vfiprintf_r
-                0x000000001a001b94                _vfprintf_r
- .text.__sread  0x000000001a001df4       0x22 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
-                0x000000001a001df4                __sread
+                0x000000001a001bb0      0x260 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000001a001bb0                _vfiprintf_r
+                0x000000001a001bb0                _vfprintf_r
+ .text.__sread  0x000000001a001e10       0x22 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
+                0x000000001a001e10                __sread
  .text.__swrite
-                0x000000001a001e16       0x38 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
-                0x000000001a001e16                __swrite
- .text.__sseek  0x000000001a001e4e       0x24 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
-                0x000000001a001e4e                __sseek
+                0x000000001a001e32       0x38 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
+                0x000000001a001e32                __swrite
+ .text.__sseek  0x000000001a001e6a       0x24 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
+                0x000000001a001e6a                __sseek
  .text.__sclose
-                0x000000001a001e72        0x8 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
-                0x000000001a001e72                __sclose
- *fill*         0x000000001a001e7a        0x2 
+                0x000000001a001e8e        0x8 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
+                0x000000001a001e8e                __sclose
+ *fill*         0x000000001a001e96        0x2 
  .text.__swbuf_r
-                0x000000001a001e7c       0xa4 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wbuf.o)
-                0x000000001a001e7c                __swbuf_r
+                0x000000001a001e98       0xa4 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wbuf.o)
+                0x000000001a001e98                __swbuf_r
  .text.__swsetup_r
-                0x000000001a001f20       0xdc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wsetup.o)
-                0x000000001a001f20                __swsetup_r
+                0x000000001a001f3c       0xdc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wsetup.o)
+                0x000000001a001f3c                __swsetup_r
  .text.__sflush_r
-                0x000000001a001ffc      0x10c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
-                0x000000001a001ffc                __sflush_r
+                0x000000001a002018      0x10c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
+                0x000000001a002018                __sflush_r
  .text._fflush_r
-                0x000000001a002108       0x78 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
-                0x000000001a002108                _fflush_r
+                0x000000001a002124       0x78 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
+                0x000000001a002124                _fflush_r
  .text.__swhatbuf_r
-                0x000000001a002180       0x4a /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
-                0x000000001a002180                __swhatbuf_r
- *fill*         0x000000001a0021ca        0x2 
+                0x000000001a00219c       0x4a /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
+                0x000000001a00219c                __swhatbuf_r
+ *fill*         0x000000001a0021e6        0x2 
  .text.__smakebuf_r
-                0x000000001a0021cc       0x80 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
-                0x000000001a0021cc                __smakebuf_r
- *fill*         0x000000001a00224c        0x4 
- .text          0x000000001a002250       0xa0 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
-                0x000000001a002250                memchr
+                0x000000001a0021e8       0x80 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
+                0x000000001a0021e8                __smakebuf_r
+ *fill*         0x000000001a002268        0x8 
+ .text          0x000000001a002270       0xa0 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
+                0x000000001a002270                memchr
  .text.__malloc_lock
-                0x000000001a0022f0        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
-                0x000000001a0022f0                __malloc_lock
+                0x000000001a002310        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+                0x000000001a002310                __malloc_lock
  .text.__malloc_unlock
-                0x000000001a0022fc        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
-                0x000000001a0022fc                __malloc_unlock
- .text._free_r  0x000000001a002308       0x98 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
-                0x000000001a002308                _free_r
+                0x000000001a00231c        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+                0x000000001a00231c                __malloc_unlock
+ .text._free_r  0x000000001a002328       0x98 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
+                0x000000001a002328                _free_r
  .text._printf_common
-                0x000000001a0023a0       0xda /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000000001a0023a0                _printf_common
- *fill*         0x000000001a00247a        0x2 
+                0x000000001a0023c0       0xda /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000001a0023c0                _printf_common
+ *fill*         0x000000001a00249a        0x2 
  .text._printf_i
-                0x000000001a00247c      0x24c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000000001a00247c                _printf_i
+                0x000000001a00249c      0x24c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000001a00249c                _printf_i
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.translateError.str1.4
-                0x000000001a0026c8       0x50 projects/lab1/out/projects/lab1/src/lab1.o
+                0x000000001a0026e8       0x50 projects/lab1/out/projects/lab1/src/lab1.o
  .rodata.handleError.str1.4
-                0x000000001a002718        0x3 projects/lab1/out/projects/lab1/src/lab1.o
- *fill*         0x000000001a00271b        0x1 
+                0x000000001a002738        0x3 projects/lab1/out/projects/lab1/src/lab1.o
+ *fill*         0x000000001a00273b        0x1 
  .rodata.ExtRateIn
-                0x000000001a00271c        0x4 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a00271c                ExtRateIn
+                0x000000001a00273c        0x4 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a00273c                ExtRateIn
  .rodata.GpioButtons
-                0x000000001a002720        0x8 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002740        0x8 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .rodata.GpioLeds
-                0x000000001a002728        0xc projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002748        0xc projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .rodata.GpioPorts
-                0x000000001a002734       0x12 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- *fill*         0x000000001a002746        0x2 
+                0x000000001a002754       0x12 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ *fill*         0x000000001a002766        0x2 
  .rodata.OscRateIn
-                0x000000001a002748        0x4 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a002748                OscRateIn
+                0x000000001a002768        0x4 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002768                OscRateIn
  .rodata.InitClkStates
-                0x000000001a00274c        0x4 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a00276c        0x4 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.pinmuxing
-                0x000000001a002750       0x74 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a002770       0x74 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.Chip_Clock_SetDivider.str1.4
-                0x000000001a0027c4        0x6 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- *fill*         0x000000001a0027ca        0x2 
+                0x000000001a0027e4        0x6 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ *fill*         0x000000001a0027ea        0x2 
  .rodata.periph_to_base
-                0x000000001a0027cc       0x6c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0027ec       0x6c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .rodata.InitClkStates
-                0x000000001a002838       0x48 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x000000001a002858       0x48 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
  .rodata.UART_BClock
-                0x000000001a002880        0x8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a0028a0        0x8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .rodata.UART_PClock
-                0x000000001a002888        0x8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a0028a8        0x8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .rodata.__sf_fake_stderr
-                0x000000001a002890       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a002890                __sf_fake_stderr
- .rodata.__sf_fake_stdin
                 0x000000001a0028b0       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a0028b0                __sf_fake_stdin
- .rodata.__sf_fake_stdout
+                0x000000001a0028b0                __sf_fake_stderr
+ .rodata.__sf_fake_stdin
                 0x000000001a0028d0       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a0028d0                __sf_fake_stdout
+                0x000000001a0028d0                __sf_fake_stdin
+ .rodata.__sf_fake_stdout
+                0x000000001a0028f0       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a0028f0                __sf_fake_stdout
  .rodata._global_impure_ptr
-                0x000000001a0028f0        0x4 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
-                0x000000001a0028f0                _global_impure_ptr
+                0x000000001a002910        0x4 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+                0x000000001a002910                _global_impure_ptr
  .rodata._vfprintf_r.str1.1
-                0x000000001a0028f4       0x11 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000001a002914       0x11 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
  .rodata._printf_i.str1.1
-                0x000000001a002905       0x22 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000000001a002928                . = ALIGN (0x4)
- *fill*         0x000000001a002927        0x1 
+                0x000000001a002925       0x22 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000001a002948                . = ALIGN (0x4)
+ *fill*         0x000000001a002947        0x1 
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000001a002928                __exidx_start = .
+                0x000000001a002948                __exidx_start = .
 
-.ARM.exidx      0x000000001a002928        0x8
+.ARM.exidx      0x000000001a002948        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
  .ARM.exidx.text.__udivmoddi4
-                0x000000001a002928        0x8 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000001a002930                __exidx_end = .
-                0x000000001a002930                _etext = .
+                0x000000001a002948        0x8 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000001a002950                __exidx_end = .
+                0x000000001a002950                _etext = .
 
-.rel.dyn        0x000000001a002930        0x0
- .rel.iplt      0x000000001a002930        0x0 projects/lab1/out/projects/lab1/src/configuracion.o
+.rel.dyn        0x000000001a002950        0x0
+ .rel.iplt      0x000000001a002950        0x0 projects/lab1/out/projects/lab1/src/configuracion.o
 
-.data_RAM2      0x0000000010080000        0x0 load address 0x000000001a002930
+.data_RAM2      0x0000000010080000        0x0 load address 0x000000001a002950
  FILL mask 0xff
  *(.ramfunc.$RAM2)
  *(.ramfunc.$RamLoc40)
@@ -8164,7 +8168,7 @@ END GROUP
  *(.data.$RamLoc40*)
                 0x0000000010080000                . = ALIGN (0x4)
 
-.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a002930
+.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a002950
  FILL mask 0xff
  *(.ramfunc.$RAM3)
  *(.ramfunc.$RamAHB32)
@@ -8172,7 +8176,7 @@ END GROUP
  *(.data.$RamAHB32*)
                 0x0000000020000000                . = ALIGN (0x4)
 
-.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a002930
+.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a002950
  FILL mask 0xff
  *(.ramfunc.$RAM4)
  *(.ramfunc.$RamAHB16)
@@ -8180,7 +8184,7 @@ END GROUP
  *(.data.$RamAHB16*)
                 0x0000000020008000                . = ALIGN (0x4)
 
-.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a002930
+.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a002950
  FILL mask 0xff
  *(.ramfunc.$RAM5)
  *(.ramfunc.$RamAHB_ETB16)
@@ -8194,7 +8198,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000       0x9c load address 0x000000001a002930
+.data           0x0000000010000000       0x9c load address 0x000000001a002950
  FILL mask 0xff
                 0x0000000010000000                _data = .
  *(vtable)
@@ -8209,7 +8213,7 @@ END GROUP
                 0x000000001000009c                . = ALIGN (0x4)
                 0x000000001000009c                _edata = .
 
-.igot.plt       0x000000001000009c        0x0 load address 0x000000001a0029cc
+.igot.plt       0x000000001000009c        0x0 load address 0x000000001a0029ec
  .igot.plt      0x000000001000009c        0x0 projects/lab1/out/projects/lab1/src/configuracion.o
 
 .bss_RAM2       0x0000000010080000        0x0
@@ -8295,32 +8299,32 @@ END GROUP
                 0x00000000100000c0                _end_noinit = .
                 0x00000000100000c0                PROVIDE (_pvHeapStart = .)
                 0x0000000010008000                PROVIDE (_vStackTop = (__top_RamLoc32 - 0x0))
-                0xffffffff53ff7306                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
+                0xffffffff53ff72ea                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(projects/lab1/out/lab1.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x0000000000000000     0xf67f
+.debug_info     0x0000000000000000     0xf6dc
  .debug_info    0x0000000000000000     0x1139 projects/lab1/out/projects/lab1/src/configuracion.o
- .debug_info    0x0000000000001139      0xa60 projects/lab1/out/projects/lab1/src/lab1.o
- .debug_info    0x0000000000001b99      0x323 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_info    0x0000000000001ebc      0xfab projects/lab1/out/libs/sys_newlib//src/system.o
- .debug_info    0x0000000000002e67      0xf98 projects/lab1/out/modules/drivers_bm//src/led.o
- .debug_info    0x0000000000003dff     0x1b60 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_info    0x000000000000595f      0xca9 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_info    0x0000000000006608      0xb5f projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_info    0x0000000000007167      0xca8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_info    0x0000000000007e0f     0x1a70 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_info    0x000000000000987f      0x1ce projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_info    0x0000000000009a4d     0x1496 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_info    0x000000000000aee3     0x190c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_info    0x000000000000c7ef      0xadb projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_info    0x000000000000d2ca     0x189e projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_info    0x000000000000eb68       0x41 projects/lab1/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_info    0x000000000000eba9      0x333 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_info    0x000000000000eedc       0x77 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_info    0x000000000000ef53       0x24 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_info    0x000000000000ef77      0x6e4 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
- .debug_info    0x000000000000f65b       0x24 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x0000000000001139      0xabd projects/lab1/out/projects/lab1/src/lab1.o
+ .debug_info    0x0000000000001bf6      0x323 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_info    0x0000000000001f19      0xfab projects/lab1/out/libs/sys_newlib//src/system.o
+ .debug_info    0x0000000000002ec4      0xf98 projects/lab1/out/modules/drivers_bm//src/led.o
+ .debug_info    0x0000000000003e5c     0x1b60 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_info    0x00000000000059bc      0xca9 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_info    0x0000000000006665      0xb5f projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_info    0x00000000000071c4      0xca8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_info    0x0000000000007e6c     0x1a70 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_info    0x00000000000098dc      0x1ce projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_info    0x0000000000009aaa     0x1496 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_info    0x000000000000af40     0x190c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_info    0x000000000000c84c      0xadb projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_info    0x000000000000d327     0x189e projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_info    0x000000000000ebc5       0x41 projects/lab1/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_info    0x000000000000ec06      0x333 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_info    0x000000000000ef39       0x77 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_info    0x000000000000efb0       0x24 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_info    0x000000000000efd4      0x6e4 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_info    0x000000000000f6b8       0x24 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
 
 .debug_abbrev   0x0000000000000000     0x2c9b
  .debug_abbrev  0x0000000000000000      0x27b projects/lab1/out/projects/lab1/src/configuracion.o
@@ -8378,88 +8382,88 @@ LOAD linker stubs
  .debug_loclists
                 0x00000000000045ca      0x81d /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
 
-.debug_aranges  0x0000000000000000      0x840
+.debug_aranges  0x0000000000000000      0x848
  .debug_aranges
                 0x0000000000000000       0x28 projects/lab1/out/projects/lab1/src/configuracion.o
  .debug_aranges
-                0x0000000000000028       0x58 projects/lab1/out/projects/lab1/src/lab1.o
+                0x0000000000000028       0x60 projects/lab1/out/projects/lab1/src/lab1.o
  .debug_aranges
-                0x0000000000000080       0x90 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+                0x0000000000000088       0x90 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
  .debug_aranges
-                0x0000000000000110       0xe0 projects/lab1/out/libs/sys_newlib//src/system.o
+                0x0000000000000118       0xe0 projects/lab1/out/libs/sys_newlib//src/system.o
  .debug_aranges
-                0x00000000000001f0       0x38 projects/lab1/out/modules/drivers_bm//src/led.o
+                0x00000000000001f8       0x38 projects/lab1/out/modules/drivers_bm//src/led.o
  .debug_aranges
-                0x0000000000000228       0xc0 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x0000000000000230       0xc0 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .debug_aranges
-                0x00000000000002e8       0x30 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x00000000000002f0       0x30 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .debug_aranges
-                0x0000000000000318       0x90 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x0000000000000320       0x90 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .debug_aranges
-                0x00000000000003a8       0x38 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+                0x00000000000003b0       0x38 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
  .debug_aranges
-                0x00000000000003e0      0x128 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x00000000000003e8      0x128 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .debug_aranges
-                0x0000000000000508       0x28 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+                0x0000000000000510       0x28 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
  .debug_aranges
-                0x0000000000000530       0xd8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x0000000000000538       0xd8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
  .debug_aranges
-                0x0000000000000608       0xa0 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x0000000000000610       0xa0 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .debug_aranges
-                0x00000000000006a8       0x38 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x00000000000006b0       0x38 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
  .debug_aranges
-                0x00000000000006e0       0xa8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x00000000000006e8       0xa8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .debug_aranges
-                0x0000000000000788       0x18 projects/lab1/out/libs/lpc_open/lpc_startup/src/crp.o
+                0x0000000000000790       0x18 projects/lab1/out/libs/lpc_open/lpc_startup/src/crp.o
  .debug_aranges
-                0x00000000000007a0       0x20 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
+                0x00000000000007a8       0x20 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
  .debug_aranges
-                0x00000000000007c0       0x20 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+                0x00000000000007c8       0x20 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
  .debug_aranges
-                0x00000000000007e0       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x00000000000007e8       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
  .debug_aranges
-                0x0000000000000800       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x0000000000000808       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
  .debug_aranges
-                0x0000000000000820       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x0000000000000828       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
 
 .debug_rnglists
-                0x0000000000000000      0x6b9
+                0x0000000000000000      0x6c0
  .debug_rnglists
                 0x0000000000000000       0x19 projects/lab1/out/projects/lab1/src/configuracion.o
  .debug_rnglists
-                0x0000000000000019       0x3d projects/lab1/out/projects/lab1/src/lab1.o
+                0x0000000000000019       0x44 projects/lab1/out/projects/lab1/src/lab1.o
  .debug_rnglists
-                0x0000000000000056       0x68 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000000000005d       0x68 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
  .debug_rnglists
-                0x00000000000000be       0xa3 projects/lab1/out/libs/sys_newlib//src/system.o
+                0x00000000000000c5       0xa3 projects/lab1/out/libs/sys_newlib//src/system.o
  .debug_rnglists
-                0x0000000000000161       0x25 projects/lab1/out/modules/drivers_bm//src/led.o
+                0x0000000000000168       0x25 projects/lab1/out/modules/drivers_bm//src/led.o
  .debug_rnglists
-                0x0000000000000186       0xaf projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000000000018d       0xaf projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .debug_rnglists
-                0x0000000000000235       0x2b projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000000000023c       0x2b projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .debug_rnglists
-                0x0000000000000260       0x67 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x0000000000000267       0x67 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .debug_rnglists
-                0x00000000000002c7       0x25 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+                0x00000000000002ce       0x25 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
  .debug_rnglists
-                0x00000000000002ec      0x11b projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x00000000000002f3      0x11b projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .debug_rnglists
-                0x0000000000000407       0x19 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+                0x000000000000040e       0x19 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
  .debug_rnglists
-                0x0000000000000420       0xa2 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x0000000000000427       0xa2 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
  .debug_rnglists
-                0x00000000000004c2       0xb4 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x00000000000004c9       0xb4 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .debug_rnglists
-                0x0000000000000576       0x26 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x000000000000057d       0x26 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
  .debug_rnglists
-                0x000000000000059c       0x86 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x00000000000005a3       0x86 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .debug_rnglists
-                0x0000000000000622       0x13 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
+                0x0000000000000629       0x13 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
  .debug_rnglists
-                0x0000000000000635       0x13 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+                0x000000000000063c       0x13 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
  .debug_rnglists
-                0x0000000000000648       0x71 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000000000064f       0x71 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
 
 .debug_macro    0x0000000000000000     0x9119
  .debug_macro   0x0000000000000000      0x325 projects/lab1/out/projects/lab1/src/configuracion.o
@@ -8578,70 +8582,70 @@ LOAD linker stubs
  .debug_macro   0x0000000000008cdc      0x420 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
  .debug_macro   0x00000000000090fc       0x1d projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
 
-.debug_line     0x0000000000000000     0xab09
+.debug_line     0x0000000000000000     0xab20
  .debug_line    0x0000000000000000      0x8f2 projects/lab1/out/projects/lab1/src/configuracion.o
- .debug_line    0x00000000000008f2      0x96b projects/lab1/out/projects/lab1/src/lab1.o
- .debug_line    0x000000000000125d      0x2ac projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_line    0x0000000000001509      0x593 projects/lab1/out/libs/sys_newlib//src/system.o
- .debug_line    0x0000000000001a9c      0xb0b projects/lab1/out/modules/drivers_bm//src/led.o
- .debug_line    0x00000000000025a7      0xcf3 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_line    0x000000000000329a      0x851 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_line    0x0000000000003aeb      0x9a4 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_line    0x000000000000448f      0x6d4 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_line    0x0000000000004b63     0x1397 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_line    0x0000000000005efa      0x646 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_line    0x0000000000006540      0xf80 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_line    0x00000000000074c0     0x11ae projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_line    0x000000000000866e      0x886 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_line    0x0000000000008ef4      0xe22 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_line    0x0000000000009d16       0x44 projects/lab1/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_line    0x0000000000009d5a      0x77f projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_line    0x000000000000a4d9       0x76 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_line    0x000000000000a54f       0x4e /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_line    0x000000000000a59d      0x522 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
- .debug_line    0x000000000000aabf       0x4a /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x00000000000008f2      0x982 projects/lab1/out/projects/lab1/src/lab1.o
+ .debug_line    0x0000000000001274      0x2ac projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_line    0x0000000000001520      0x593 projects/lab1/out/libs/sys_newlib//src/system.o
+ .debug_line    0x0000000000001ab3      0xb0b projects/lab1/out/modules/drivers_bm//src/led.o
+ .debug_line    0x00000000000025be      0xcf3 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_line    0x00000000000032b1      0x851 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_line    0x0000000000003b02      0x9a4 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_line    0x00000000000044a6      0x6d4 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_line    0x0000000000004b7a     0x1397 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_line    0x0000000000005f11      0x646 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_line    0x0000000000006557      0xf80 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_line    0x00000000000074d7     0x11ae projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_line    0x0000000000008685      0x886 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_line    0x0000000000008f0b      0xe22 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_line    0x0000000000009d2d       0x44 projects/lab1/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_line    0x0000000000009d71      0x77f projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_line    0x000000000000a4f0       0x76 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_line    0x000000000000a566       0x4e /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_line    0x000000000000a5b4      0x522 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_line    0x000000000000aad6       0x4a /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
 
-.debug_str      0x0000000000000000    0x1e840
+.debug_str      0x0000000000000000    0x1e849
  .debug_str     0x0000000000000000    0x16bd5 projects/lab1/out/projects/lab1/src/configuracion.o
                                       0x16e33 (size before relaxing)
- .debug_str     0x0000000000016bd5     0x3f07 projects/lab1/out/projects/lab1/src/lab1.o
-                                      0x1a799 (size before relaxing)
- .debug_str     0x000000000001aadc      0x224 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_str     0x0000000000016bd5     0x3f10 projects/lab1/out/projects/lab1/src/lab1.o
+                                      0x1a7a7 (size before relaxing)
+ .debug_str     0x000000000001aae5      0x224 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
                                        0x301b (size before relaxing)
- .debug_str     0x000000000001ad00      0xbf9 projects/lab1/out/libs/sys_newlib//src/system.o
+ .debug_str     0x000000000001ad09      0xbf9 projects/lab1/out/libs/sys_newlib//src/system.o
                                        0x6c88 (size before relaxing)
- .debug_str     0x000000000001b8f9      0x26a projects/lab1/out/modules/drivers_bm//src/led.o
+ .debug_str     0x000000000001b902      0x26a projects/lab1/out/modules/drivers_bm//src/led.o
                                       0x16bf2 (size before relaxing)
- .debug_str     0x000000000001bb63      0xd2b projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_str     0x000000000001bb6c      0xd2b projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
                                       0x1b381 (size before relaxing)
- .debug_str     0x000000000001c88e      0x336 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_str     0x000000000001c897      0x336 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
                                       0x1aca2 (size before relaxing)
- .debug_str     0x000000000001cbc4      0x16d projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_str     0x000000000001cbcd      0x16d projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
                                       0x170aa (size before relaxing)
- .debug_str     0x000000000001cd31      0x15a projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_str     0x000000000001cd3a      0x15a projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
                                       0x1766c (size before relaxing)
- .debug_str     0x000000000001ce8b      0x4f3 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_str     0x000000000001ce94      0x4f3 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
                                       0x17ae6 (size before relaxing)
- .debug_str     0x000000000001d37e       0x42 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_str     0x000000000001d387       0x42 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
                                       0x16861 (size before relaxing)
- .debug_str     0x000000000001d3c0      0x585 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_str     0x000000000001d3c9      0x585 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
                                       0x17841 (size before relaxing)
- .debug_str     0x000000000001d945      0x3e8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_str     0x000000000001d94e      0x3e8 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
                                       0x172a0 (size before relaxing)
- .debug_str     0x000000000001dd2d       0xbc projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_str     0x000000000001dd36       0xbc projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
                                       0x17560 (size before relaxing)
- .debug_str     0x000000000001dde9      0x37c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_str     0x000000000001ddf2      0x37c projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
                                       0x17720 (size before relaxing)
- .debug_str     0x000000000001e165       0x43 projects/lab1/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_str     0x000000000001e16e       0x43 projects/lab1/out/libs/lpc_open/lpc_startup/src/crp.o
                                        0x2e09 (size before relaxing)
- .debug_str     0x000000000001e1a8       0x65 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_str     0x000000000001e1b1       0x65 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
                                       0x19f74 (size before relaxing)
- .debug_str     0x000000000001e20d       0x56 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_str     0x000000000001e216       0x56 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
                                        0x2e64 (size before relaxing)
- .debug_str     0x000000000001e263       0x66 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_str     0x000000000001e2c9      0x56b /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_str     0x000000000001e26c       0x66 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_str     0x000000000001e2d2      0x56b /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
                                         0x66b (size before relaxing)
- .debug_str     0x000000000001e834        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x000000000001e83d        0xc /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
                                          0x6a (size before relaxing)
 
 .comment        0x0000000000000000       0x1e
@@ -8747,42 +8751,42 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000000000000777       0x34 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
 
-.debug_frame    0x0000000000000000     0x18dc
+.debug_frame    0x0000000000000000     0x18ec
  .debug_frame   0x0000000000000000       0x38 projects/lab1/out/projects/lab1/src/configuracion.o
- .debug_frame   0x0000000000000038       0xb0 projects/lab1/out/projects/lab1/src/lab1.o
- .debug_frame   0x00000000000000e8      0x114 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_frame   0x00000000000001fc      0x1d0 projects/lab1/out/libs/sys_newlib//src/system.o
- .debug_frame   0x00000000000003cc       0x58 projects/lab1/out/modules/drivers_bm//src/led.o
- .debug_frame   0x0000000000000424      0x200 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_frame   0x0000000000000624       0x50 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_frame   0x0000000000000674      0x160 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_frame   0x00000000000007d4       0x70 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_frame   0x0000000000000844      0x300 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_frame   0x0000000000000b44       0x30 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_frame   0x0000000000000b74      0x268 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_frame   0x0000000000000ddc      0x188 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_frame   0x0000000000000f64       0x80 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_frame   0x0000000000000fe4      0x1f4 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_frame   0x00000000000011d8       0x28 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_frame   0x0000000000001200       0x20 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_frame   0x0000000000001220       0x2c /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x000000000000124c       0x34 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
- .debug_frame   0x0000000000001280       0x2c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
- .debug_frame   0x00000000000012ac       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
- .debug_frame   0x00000000000012cc       0x74 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-printf.o)
- .debug_frame   0x0000000000001340      0x14c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
- .debug_frame   0x000000000000148c       0x54 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fwalk.o)
- .debug_frame   0x00000000000014e0       0xb0 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
- .debug_frame   0x0000000000001590       0x30 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x00000000000015c0       0xac /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
- .debug_frame   0x000000000000166c       0x88 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
- .debug_frame   0x00000000000016f4       0x40 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wbuf.o)
- .debug_frame   0x0000000000001734       0x2c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wsetup.o)
- .debug_frame   0x0000000000001760       0x5c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
- .debug_frame   0x00000000000017bc       0x58 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
- .debug_frame   0x0000000000001814       0x30 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
- .debug_frame   0x0000000000001844       0x38 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x000000000000187c       0x60 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x0000000000000038       0xc0 projects/lab1/out/projects/lab1/src/lab1.o
+ .debug_frame   0x00000000000000f8      0x114 projects/lab1/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_frame   0x000000000000020c      0x1d0 projects/lab1/out/libs/sys_newlib//src/system.o
+ .debug_frame   0x00000000000003dc       0x58 projects/lab1/out/modules/drivers_bm//src/led.o
+ .debug_frame   0x0000000000000434      0x200 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_frame   0x0000000000000634       0x50 projects/lab1/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_frame   0x0000000000000684      0x160 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_frame   0x00000000000007e4       0x70 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_frame   0x0000000000000854      0x300 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_frame   0x0000000000000b54       0x30 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_frame   0x0000000000000b84      0x268 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_frame   0x0000000000000dec      0x188 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_frame   0x0000000000000f74       0x80 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_frame   0x0000000000000ff4      0x1f4 projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_frame   0x00000000000011e8       0x28 projects/lab1/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_frame   0x0000000000001210       0x20 projects/lab1/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_frame   0x0000000000001230       0x2c /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x000000000000125c       0x34 /usr/lib/gcc/arm-none-eabi/11.2.0/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x0000000000001290       0x2c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00000000000012bc       0x20 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000000012dc       0x74 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-printf.o)
+ .debug_frame   0x0000000000001350      0x14c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+ .debug_frame   0x000000000000149c       0x54 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fwalk.o)
+ .debug_frame   0x00000000000014f0       0xb0 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+ .debug_frame   0x00000000000015a0       0x30 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x00000000000015d0       0xac /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
+ .debug_frame   0x000000000000167c       0x88 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
+ .debug_frame   0x0000000000001704       0x40 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wbuf.o)
+ .debug_frame   0x0000000000001744       0x2c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wsetup.o)
+ .debug_frame   0x0000000000001770       0x5c /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
+ .debug_frame   0x00000000000017cc       0x58 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
+ .debug_frame   0x0000000000001824       0x30 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+ .debug_frame   0x0000000000001854       0x38 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x000000000000188c       0x60 /usr/lib/gcc/arm-none-eabi/11.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
 
 .debug_line_str
                 0x0000000000000000       0x4e
@@ -9580,6 +9584,7 @@ printf                                            /usr/lib/gcc/arm-none-eabi/11.
                                                   projects/lab1/out/projects/lab1/src/lab1.o
 readAdcVal                                        projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
 refrescarDigitos                                  projects/lab1/out/modules/drivers_bm//src/unt.o
+sendByte                                          projects/lab1/out/projects/lab1/src/lab1.o
 setStartMode                                      projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
 setupChannel                                      projects/lab1/out/libs/lpc_open/lpc_chip_43xx/src/gpdma_18xx_43xx.o
 timerInit                                         projects/lab1/out/modules/drivers_bm//src/timer.o
